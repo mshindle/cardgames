@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '1.5.2.RELEASE'
+}
+
+group 'com.coffeegem'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    sourceCompatibility = 1.8
+
+    compile('org.springframework.boot:spring-boot-starter-websocket')
+
+    runtime("org.webjars:webjars-locator")
+    runtime("org.webjars:sockjs-client:1.0.2")
+    runtime("org.webjars:stomp-websocket:2.3.3")
+    runtime("org.webjars:bootstrap:3.3.7")
+    runtime("org.webjars:jquery:3.1.0")
+
+    testCompile('junit:junit')
+}
