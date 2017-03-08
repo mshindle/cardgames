@@ -1,7 +1,7 @@
 package com.coffeegem.cardgames.server;
 
-import com.coffeegem.cardgames.Deal;
-import com.coffeegem.cardgames.Deck;
+import com.coffeegem.cardgames.equipment.Deal;
+import com.coffeegem.cardgames.equipment.Deck;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;

@@ -1,5 +1,8 @@
 package com.coffeegem.cardgames;
 
+import com.coffeegem.cardgames.equipment.Card;
+import com.coffeegem.cardgames.equipment.Deck;
+import com.coffeegem.cardgames.equipment.DeckFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -16,14 +19,7 @@ public class Application {
 
     @Bean
     public Deck deck() {
-        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"};
-        List<Card> cards = new ArrayList<>(52);
-        for (Suit s : Suit.values()) {
-            for (String r : ranks) {
-                cards.add(new Card(r, s));
-            }
-        }
-        Deck deck = new Deck(cards);
+        Deck deck = DeckFactory.createShoe(6);
         deck.shuffle();
         return deck;
     }

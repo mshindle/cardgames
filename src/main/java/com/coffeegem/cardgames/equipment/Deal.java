@@ -1,4 +1,4 @@
-package com.coffeegem.cardgames;
+package com.coffeegem.cardgames.equipment;
 
 /**
  * Created by mike on 3/6/17.

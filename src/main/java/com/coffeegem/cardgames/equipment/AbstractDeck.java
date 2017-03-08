@@ -1,25 +1,26 @@
-package com.coffeegem.cardgames;
+package com.coffeegem.cardgames.equipment;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by mike on 3/6/17.
+ * Created by mike on 3/7/17.
  */
-public class Deck {
-    /**
-     * A list of cards. A standard deck is 52 cards.
-     */
-    private List<Card> cards;
-
+public abstract class AbstractDeck implements Deck {
     /**
      * Keeps track of the number of cards that have been dealt from
      * the deck so far.
      */
     private int cardsUsed;
 
-    public Deck(List<Card> cards) {
-        this.cards = cards;
+    /**
+     * A list of cards. A standard deck is 52 cards.
+     */
+    private List<Card> cards;
+
+    AbstractDeck() {
+        cards = new ArrayList(52);
         cardsUsed = 0;
     }
 
@@ -28,10 +29,10 @@ public class Deck {
      * shuffle the deck into a random order.
      */
     public void shuffle() {
-        Collections.shuffle(cards);
+        for (int i = 0; i < 250; i++)
+            Collections.shuffle(cards);
         cardsUsed = 0;
     }
-
 
     /**
      * As cards are dealt from the deck, the number of cards left
@@ -62,5 +63,14 @@ public class Deck {
         // Programming note:  Cards are not literally removed from the array
         // that represents the deck.  We just keep track of how many cards
         // have been used.
+    }
+
+    /**
+     *
+     * @param cards
+     */
+    public void addCards(List<Card> cards) {
+        this.cards.addAll(cards);
+        cardsUsed = this.cards.size();
     }
 }
